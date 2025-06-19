@@ -67,9 +67,9 @@ const Home = () => {
             className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'
           >
 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Maecenas ultricies sem in eleifend vehicula. 
-            Praesent ut tristique purus. 
+            Welcome to Kevin's Next.js portfolio template for front-end websites.
+            It is using framer motion for this VERY PAGE. Try it!
+            Move the mouse around.
 
           </motion.p>
 

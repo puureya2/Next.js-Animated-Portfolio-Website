@@ -11,7 +11,7 @@ const Avatar = () => {
     >
 
       <Image 
-        src={'/avatar.png'} 
+        src={'/avatar1.png'} 
         width={737} 
         height={678}
         alt=''
