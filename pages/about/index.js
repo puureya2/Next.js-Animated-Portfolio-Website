@@ -27,18 +27,22 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          { id: 'html5', icon: FaHtml5 },
+          { id: 'css3', icon: FaCss3 },
+          { id: 'js', icon: FaJs },
+          { id: 'react', icon: FaReact },
+          { id: 'next', icon: SiNextdotjs },
+          { id: 'framer', icon: SiFramer },
+          { id: 'wordPress', icon: FaWordpress },
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          { id: 'figma', icon: FaFigma },
+          { id: 'adobexd', icon: SiAdobexd },
+          { id: 'photoshop', icon: SiAdobephotoshop }
+        ],
       },
     ],
   },
@@ -240,12 +244,12 @@ const About = () => {
 
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 z-10'>
 
-            {aboutData.map((item, itemIndex) => {
+            {aboutData.map((item) => {
               return (
 
                 <div
 
-                  key={itemIndex}
+                  key={item.title}
 
                   className={
 
@@ -267,7 +271,7 @@ const About = () => {
                     --------------------------------------------------------------------*/
                     
                     `${
-                      index === itemIndex && 
+                      index === aboutData.findIndex((i) => i.title === item.title) && 
                       'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300 after:bg-opacity-60'
                     }
                     cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px]
@@ -275,7 +279,7 @@ const About = () => {
                   
                   }
 
-                  onClick={() => setIndex(itemIndex)}
+                  onClick={() => setIndex(aboutData.findIndex((i) => i.title === item.title))}
 
                 >
                   
@@ -291,11 +295,11 @@ const About = () => {
           <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4
           items-center xl:items-start'>
 
-            {aboutData[index].info.map((item, itemIndex) => {
+            {aboutData[index].info.map((item) => {
               
               return (
 
-                <div key={itemIndex} className='flex-1 flex flex-col md:flex-row
+                <div key={item.title + (item.stage || '')} className='flex-1 flex flex-col md:flex-row
                 max-w-max gap-x-2 items-center text-white/60'>
 
                   {/* title */}
@@ -311,10 +315,9 @@ const About = () => {
                   <div className='flex gap-x-4'>
 
                     {/* icons */}
-                    {item.icons?.map((icon, iconIndex) => (
-                      
-                      <div key={iconIndex} className='text-2xl text-white'>
-                        {icon}
+                    {item.icons?.map(({ id, icon: Icon }) => (
+                      <div key={id} className='text-2xl text-white'>
+                        <Icon />
                       </div>
                     ))}
 
