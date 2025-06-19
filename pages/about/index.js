@@ -313,11 +313,9 @@ const About = () => {
                     {/* icons */}
                     {item.icons?.map((icon, iconIndex) => {
                       
-                      return (
                       <div key={iconIndex} className='text-2xl text-white'>
                         {icon}
                       </div>
-                    );
 
                     })}
 
