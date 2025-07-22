@@ -1,4 +1,4 @@
-# 💼 Animated Portfolio Website
+# 💼 Personal Portfolio Website
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-Visit-0db7ed?style=flat-square&logo=vercel&logoColor=white)](https://next-js-animated-portfolio-website.vercel.app/)
 
